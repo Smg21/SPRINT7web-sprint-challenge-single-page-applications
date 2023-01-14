@@ -18,7 +18,7 @@ const Home = () => {
           <button
         className='pizza-button'
       >
-        <Link to = "/PizzaForm" class='pizzas-button'>  Make Your Pizza! </Link>
+        <Link to = "/PizzaForm" className='pizzas-link'>  Make Your Pizza! </Link>
       </button>
       <Switch>
 
