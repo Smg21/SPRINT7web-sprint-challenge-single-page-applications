@@ -2,8 +2,12 @@ import React from "react";
 const Form = (props) => {
   const handleChange = (evt) => {
     const { name, value } = evt.target;
+
+    
     props.change(name, value);
- };
+  }
+ 
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -31,6 +35,7 @@ const Form = (props) => {
         name="size"
         id="size-dropdown"
         >
+    <option value = "">Select-Size</option>
     <option value="1">Small</option>
     <option value="2">Medium</option>
     <option value="3">Large</option>
@@ -102,10 +107,11 @@ const Form = (props) => {
         Agree To The Terms And Conditions 
 
         <input 
-        type="checkbox"
+        type = "checkbox"
         name="check"
-        value = {props.values.check}
-        onChange = {handleChange}
+       value = "check"
+        id="checked" 
+        onChange={handleChange}
         />
       </label>
 

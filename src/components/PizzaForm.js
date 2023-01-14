@@ -9,7 +9,7 @@ function PizzaForm() {
 
   const onSubmit = () => {
     setMembers([values, ...members]);
-    setValues({ name: "", special:"" });
+    setValues({ name: "", special:"", size:"", check:false});
     
   }
   const onChange = (name, value) => {
