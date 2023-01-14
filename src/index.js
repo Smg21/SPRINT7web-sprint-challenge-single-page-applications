@@ -11,7 +11,7 @@ import { BrowserRouter, BrowserRouter as Router } from 'react-router-dom'
 render(
     <Router>
     < App />
-    <Home />
+    
     </Router>
     , document.querySelector('#root')
   )

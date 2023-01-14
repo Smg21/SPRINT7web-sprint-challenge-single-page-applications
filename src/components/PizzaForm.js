@@ -1,6 +1,6 @@
 import React from "react";
 
-const App = () => {
+const PizzaForm = () => {
   return (
     <>
       <h1>Lambda Eats</h1>
@@ -8,4 +8,4 @@ const App = () => {
     </>
   );
 };
-export default App;
+export default PizzaForm;

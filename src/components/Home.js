@@ -1,5 +1,7 @@
 
 import React from "react";
+import PizzaForm from './PizzaForm'
+import {Route, Link, Switch} from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -14,11 +16,17 @@ const Home = () => {
           </div>
           <div class='button-pizza'>
           <button
-        //onClick={routeToShop}
         className='pizza-button'
       >
-        Make Your Pizza!
+        <Link to = "/PizzaForm" class='pizzas-button'>  Make Your Pizza! </Link>
       </button>
+      <Switch>
+
+    <Route path = "/PizzaForm">
+        <PizzaForm />
+    </Route>
+    
+    </Switch>
       </div>
       </div>
       
