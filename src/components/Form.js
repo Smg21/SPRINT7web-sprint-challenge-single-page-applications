@@ -11,8 +11,9 @@ const Form = (props) => {
   };
   return (
     <form onSubmit={handleSubmit}>
+
       <label>
-        name
+        Name 
         <input
           placeholder="Enter Your Name Please"
           value={props.values.name}
@@ -21,8 +22,9 @@ const Form = (props) => {
         />
       </label>
       <br />
+
         <label>
-        Select Your Pizza Size!
+        Select Your Pizza Size! 
         <select 
         value = {props.values.size}
         onChange={handleChange}
@@ -36,8 +38,56 @@ const Form = (props) => {
       </label>
       <br />
 
+        <p> Choose A Topping! </p>
+
+        <label>
+            Pepperoni
+            <input 
+            onChange = {handleChange}
+            value = {props.values.Pepperoni}
+            name = "Pepperoni"
+            type = "radio"
+            />
+        </label>
+        <br />
+
+        <label>
+            Pineapple
+            <input 
+            onChange = {handleChange}
+            value = {props.values.Pineapple}
+            name = "Pineapple"
+            type = "radio"
+            />
+        </label>
+        <br />
+
+        <label>
+            Extra Cheese
+            <input 
+            onChange = {handleChange}
+            value = {props.values.Extra}
+            name = "Extra"
+            type = "radio"
+            />
+        </label>
+        <br />
+
+        <label>
+            Sausage
+            <input 
+            onChange = {handleChange}
+            value = {props.values.Sausage}
+            name = "Sausage"
+            type = "radio"
+            />
+        </label>
+        <br />
+
+
+
       <label>
-        Special Instructions
+        <p>Special Instructions! </p>
         <input
           placeholder="Enter Special Instructions Here"
           value={props.values.special}
@@ -47,7 +97,10 @@ const Form = (props) => {
       </label>
       <br />
 
-      <label> Agree To The Terms And Conditions 
+      <label> 
+        
+        Agree To The Terms And Conditions 
+
         <input 
         type="checkbox"
         name="check"
@@ -55,6 +108,9 @@ const Form = (props) => {
         onChange = {handleChange}
         />
       </label>
+
+      <br />
+
       <br />
       <input type="submit" value="Submit Order" id="Submit" />
     </form>

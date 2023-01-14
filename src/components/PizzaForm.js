@@ -20,15 +20,6 @@ function PizzaForm() {
     <div className="PizzaForm">
       <h1>Build Your Pizza!!!</h1>
       <Form values={values} change={onChange} submit={onSubmit} />
-      {members.map((member, idx) => {
-        return (
-          <div key={idx}>
-           <h1>Name - {member.name}</h1>
-            <br />
-            <h1>Special Instructions - {member.special}</h1>
-          </div>
-        );
-      })}
     </div>
   );
 }
