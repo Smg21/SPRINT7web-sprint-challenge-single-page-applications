@@ -1,28 +1,40 @@
-import React from "react";
-const Form = (props) => {
-  const handleChange = (evt) => {
-    const { name, value } = evt.target;
+import React, { useState } from "react";
 
+const Form = () => {
+  const [order, setOrder] = useState({name:"", size:"", toppings: [], special:"", check: ""});
+
+
+  // const handleChange = (evt) => {
+  //   const { name, value } = evt.target; 
     
-    props.change(name, value);
-  }
- 
+  //   setOrder({...order, name: name})
+    
+  //   // props.change(name, value);
+  //   console.log("name", name)
+  //   console.log("value", value)
+  // }
+  // const onSubmit = (order) => {
+  //   setOrders([order, ...order]);
+  //   //setValues({ name: "", special:"", size:"", checked:false});
+  // }
 
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    props.submit();
-  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   props.submit();
+  // };
+  console.log("order", order)
   return (
-    <form onSubmit={handleSubmit}>
+    <form id="pizza-form">
 
       <label>
         Name 
         <input
           placeholder="Enter Your Name Please"
-          value={props.values.name}
+          value={order.name}
           name="name"
-          onChange={handleChange}
+          onChange={(evt) => setOrder({...order, name: evt.currentTarget.value})}
+          id="name-input"
         />
       </label>
       <br />
@@ -30,12 +42,12 @@ const Form = (props) => {
         <label>
         Select Your Pizza Size! 
         <select 
-        value = {props.values.size}
-        onChange={handleChange}
+        value = {order.size}
+        onChange={(evt) => setOrder({...order, size: evt.currentTarget.value})}
         name="size"
         id="size-dropdown"
         >
-    <option value = "">Select-Size</option>
+    <option value ="0">Select-Size</option>
     <option value="1">Small</option>
     <option value="2">Medium</option>
     <option value="3">Large</option>
@@ -48,10 +60,9 @@ const Form = (props) => {
         <label>
             Pepperoni
             <input 
-            onChange = {handleChange}
-            value = {props.values.Pepperoni}
+            onChange = {(evt) => setOrder({...order, toppings: [...order.toppings, evt.currentTarget.name]})}
             name = "Pepperoni"
-            type = "radio"
+            type = "checkbox"
             />
         </label>
         <br />
@@ -59,10 +70,10 @@ const Form = (props) => {
         <label>
             Pineapple
             <input 
-            onChange = {handleChange}
-            value = {props.values.Pineapple}
+            onChange = {(evt)=> setOrder({...order, toppings: [...order.toppings, evt.currentTarget.name]})}
             name = "Pineapple"
-            type = "radio"
+            type = "checkbox"
+            
             />
         </label>
         <br />
@@ -70,10 +81,9 @@ const Form = (props) => {
         <label>
             Extra Cheese
             <input 
-            onChange = {handleChange}
-            value = {props.values.Extra}
+            onChange = {(evt)=> setOrder({...order, toppings: [...order.toppings, evt.currentTarget.name]})}
             name = "Extra"
-            type = "radio"
+            type = "checkbox"
             />
         </label>
         <br />
@@ -81,10 +91,9 @@ const Form = (props) => {
         <label>
             Sausage
             <input 
-            onChange = {handleChange}
-            value = {props.values.Sausage}
+            onChange = {(evt)=> setOrder({...order, toppings: [...order.toppings, evt.currentTarget.name]})}
             name = "Sausage"
-            type = "radio"
+            type = "checkbox"
             />
         </label>
         <br />
@@ -95,9 +104,11 @@ const Form = (props) => {
         <p>Special Instructions! </p>
         <input
           placeholder="Enter Special Instructions Here"
-          value={props.values.special}
+          onChange={(evt) => setOrder({...order, special: evt.currentTarget.value})}
           name="special"
-          onChange={handleChange}
+          id="special-text"
+          value={order.special}
+          
         />
       </label>
       <br />
@@ -109,19 +120,21 @@ const Form = (props) => {
         <input 
         type = "checkbox"
         name="check"
-       value = "check"
+        value ="check"
         id="checked" 
-        onChange={handleChange}
+        onChange = {(evt)=> setOrder({...order, check: evt.currentTarget.name})}
+        
         />
       </label>
 
       <br />
 
       <br />
-      <input type="submit" value="Submit Order" id="Submit" />
+      <input type="submit" value="Add To Order" id="order-button" />
     </form>
   );
 };
 
-export default Form;
 
+
+export default Form;

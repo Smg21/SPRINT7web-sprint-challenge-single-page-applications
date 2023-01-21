@@ -4,6 +4,7 @@ import PizzaForm from './PizzaForm'
 import {Route, Link, Switch} from 'react-router-dom';
 
 const Home = () => {
+  
   return (
     <>
     <div className='home-wrapper'>
@@ -18,11 +19,11 @@ const Home = () => {
           <button
         className='pizza-button'
       >
-        <Link to = "/PizzaForm" className='pizzas-link'>  Make Your Pizza! </Link>
+        <Link to = "/pizza" className='pizzas-link' id="order-pizza" >  Make Your Pizza! </Link>
       </button>
       <Switch>
 
-    <Route path = "/PizzaForm">
+    <Route path = "/pizza">
         <PizzaForm />
     </Route>
     
@@ -33,4 +34,5 @@ const Home = () => {
     </>
   );
 };
+
 export default Home;

@@ -3,20 +3,20 @@ import {Route, Link, Switch} from 'react-router-dom';
 import Home from './Home'
 import PizzaForm from './PizzaForm'
 
-export default function App(props) {
+const App = () => {
      return (
       <div className='App'>
         <nav>
           <h1 className='pizza-header'>BloomTech Pizza</h1>
           <div className='nav-links'>
-            <Link to="/">HOME</Link>
-            <Link to = "/PizzaForm">PIZZA</Link>
+            <Link to="/" >HOME</Link>
+            <Link to = "/pizza" id="order-pizza">PIZZA</Link>
   
           </div>
         </nav>
         <Switch>
 
-    <Route path = "/PizzaForm">
+    <Route path = "/pizza">
         <PizzaForm />
     </Route>
     
@@ -29,3 +29,4 @@ export default function App(props) {
     )
   }
   
+  export default App;

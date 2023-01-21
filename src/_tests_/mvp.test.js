@@ -1,6 +1,7 @@
 import React from "react";
 import axios from 'axios'
-import App from "../App";
+import App from "../components/App";
+
 import { Router, MemoryRouter, Route } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
@@ -8,6 +9,7 @@ import userEvent from '@testing-library/user-event'
 import "@testing-library/jest-dom";
 
 jest.mock('axios')
+
 
 describe("Pizza test, sprint 3 challenge", () => {
   it('Homepage at "/" route, has link or button with #order-pizza, Review how to create links and buttons.', () => {
