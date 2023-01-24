@@ -2,27 +2,16 @@ import React, { useState } from "react";
 
 const Form = () => {
   const [order, setOrder] = useState({name:"", size:"", toppings: [], special:"", check: ""});
-
-
-  // const handleChange = (evt) => {
-  //   const { name, value } = evt.target; 
-    
-  //   setOrder({...order, name: name})
-    
-  //   // props.change(name, value);
-  //   console.log("name", name)
-  //   console.log("value", value)
-  // }
-  // const onSubmit = (order) => {
-  //   setOrders([order, ...order]);
-  //   //setValues({ name: "", special:"", size:"", checked:false});
-  // }
-
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   props.submit();
-  // };
+  
+  
+const showErrorMessage = () => {
+  if (order.name && order.name.length<2){
+    return (
+      <p>name must be at least 2 characters</p>
+    );
+  }
+};
+ 
   console.log("order", order)
   return (
     <form id="pizza-form">
@@ -37,7 +26,9 @@ const Form = () => {
           id="name-input"
         />
       </label>
+      {showErrorMessage()}
       <br />
+      
 
         <label>
         Select Your Pizza Size! 
