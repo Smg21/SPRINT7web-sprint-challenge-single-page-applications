@@ -1,6 +1,7 @@
 import React from "react";
 import axios from 'axios'
-import App from "../components/App";
+
+import App from "../../src/App"; 
 
 import { Router, MemoryRouter, Route } from 'react-router-dom'
 import { createMemoryHistory } from 'history'

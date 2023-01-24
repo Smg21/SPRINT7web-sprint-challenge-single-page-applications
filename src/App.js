@@ -1,8 +1,8 @@
 import React from 'react'
 import {Route, Link, Switch} from 'react-router-dom';
-import Home from './Home'
-import PizzaForm from './PizzaForm'
-import Congrats from './Congrats'
+import Home from './components/Home'
+import PizzaForm from './components/PizzaForm'
+import Congrats from './components/Congrats'
 const App = () => {
      return (
       <div className='App'>
@@ -14,16 +14,16 @@ const App = () => {
           </div>
         </nav>
         <Switch>
-    <Route path = "/pizza">
-        <PizzaForm />
-    </Route>
-     <Route path="/">
-      <Home />
-    </Route>
-    <Route path = "/congrats">
-      <Congrats />
-    </Route>
-    </Switch>
+          <Route path = "/pizza">
+            <PizzaForm />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+          <Route path = "/congrats">
+            <Congrats />
+          </Route>
+        </Switch>
       </div>
     )
   }
