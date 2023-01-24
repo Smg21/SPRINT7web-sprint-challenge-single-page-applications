@@ -2,7 +2,7 @@ import React from 'react'
 import {Route, Link, Switch} from 'react-router-dom';
 import Home from './Home'
 import PizzaForm from './PizzaForm'
-
+import Congrats from './Congrats'
 const App = () => {
      return (
       <div className='App'>
@@ -11,22 +11,20 @@ const App = () => {
           <div className='nav-links'>
             <Link to="/" >HOME</Link>
             <Link to = "/pizza" id="order-pizza">PIZZA</Link>
-  
           </div>
         </nav>
         <Switch>
-
     <Route path = "/pizza">
         <PizzaForm />
     </Route>
-    
-    <Route path="/">
+     <Route path="/">
       <Home />
     </Route>
-    
+    <Route path = "/congrats">
+      <Congrats />
+    </Route>
     </Switch>
       </div>
     )
   }
-  
   export default App;
